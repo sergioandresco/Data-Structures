@@ -1,0 +1,39 @@
+package taller;
+
+import java.io.*;
+
+	public class tarea {
+	public static void main(String[] args) {
+ 
+		BufferedReader br = new BufferedReader(new InputStreamReader (System.in));
+		BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (System.out));
+		
+		try
+		{
+		
+		bw.write("Enter the chain : ");
+		bw.flush();
+		String c = br.readLine();
+		StringBuffer chain_to_buffer = new StringBuffer(c);
+		StringBuffer na= chain_to_buffer.reverse(); 
+
+		StringBuffer sbuf = new StringBuffer(na); 
+		String cadreversaenstring = sbuf.toString(); 
+
+		bw.write(c + "\n");
+		bw.flush();
+		bw.write(cadreversaenstring);
+		bw.flush();
+		
+		if(c.equals(cadreversaenstring)) { 
+		bw.write("\nIf it’s palindrome");
+		bw.flush();
+		}
+		else {
+		bw.write("\nIt is not palindrome");
+		bw.flush();
+		}
+		}
+		catch (Exception ex) {}
+		}
+}
