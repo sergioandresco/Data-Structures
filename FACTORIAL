@@ -1,0 +1,41 @@
+package taller;
+
+import java.io.*; 
+
+public class tarea {
+	
+	public static int fac(int n)
+	{
+		if (n < 0)		
+		{
+			return 0;
+		}
+		else
+		{
+			if (n == 0)	
+			{
+				return 1;
+			}
+			else				
+			{				
+				return n*fac(n-1);
+			}
+		}
+	}	
+		
+	
+	public static void main (String[] args) throws IOException
+	{
+		BufferedReader br = new BufferedReader ( new InputStreamReader (System.in));
+		BufferedWriter bw = new BufferedWriter ( new OutputStreamWriter ( System.out ));
+		
+				bw.write("Enter number : ");
+				bw.flush();
+				int n = Integer.parseInt(br.readLine());
+				
+		new tarea();
+		bw.write("The factorial of " + n + " is " + tarea.fac(n));
+		bw.flush();
+	}
+	
+}
