@@ -1,0 +1,34 @@
+package taller;
+
+import java.io.*;
+
+public class tarea {
+
+	    public static void main(String[] args) throws IOException {
+	        
+	    	char [] Arraychain;
+	        char character;
+	        int accountant = 0;
+	        
+	        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+	        BufferedWriter bw= new BufferedWriter(new OutputStreamWriter(System.out));
+	        
+	        String chain = " "; 
+	        bw.write("Write the phrase you want:   ");
+	        bw.flush();
+	        chain = br.readLine();
+	        Arraychain = chain.toCharArray();
+	        for (int i = 0; i<Arraychain.length; i++){
+	            character = Arraychain[i];
+	            for (int j = 0; j<Arraychain.length; j++){
+	                if(Arraychain [j] == character){
+	                	accountant ++;    
+	                }
+	            }
+	            bw.write("\n"+Arraychain[i]+"  "+ accountant);
+	            bw.flush();
+	            accountant = 0;
+	        }
+	        
+	    }
+}
