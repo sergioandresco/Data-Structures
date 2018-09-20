@@ -1,0 +1,52 @@
+package taller;
+
+import java.io.*;
+
+public class tarea {
+
+	public static long pascal (int n, int k)
+	{
+		
+	if (k == 0 || k == n) 
+		return 1;
+	else 
+		return pascal(n-1,k-1) + pascal(n-1,k);
+	}
+	public static void main(String args[]) throws IOException
+	{
+		BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
+		BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (System.out));
+		
+		bw.write("Enter the number of rows you want to have: ");
+		bw.flush();
+		int row = Integer.parseInt(br.readLine());
+		
+
+	for(int i=0; i< row; i++)
+	{
+	for(int j=0; j <=i; j++)
+	bw.write(pascal(i,j)+" ");
+	bw.flush();
+	bw.write("\n");
+	bw.flush();
+	}
+	}
+
+	public static void printInv(String s) throws IOException
+	 {
+	
+		BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (System.out));
+		
+	 if (s.length() == 1)
+	 {
+		 bw.write(s);
+		 bw.flush();
+	 }else
+	 {
+	 printInv(s.substring(1));
+	 bw.write(s.charAt(0));
+	 bw.flush();
+	 }
+	 }
+	
+}
