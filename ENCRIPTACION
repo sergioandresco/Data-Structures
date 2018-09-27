@@ -1,0 +1,63 @@
+package taller;
+
+import java.io.*;
+
+public class tarea {
+
+	public static void main (String [] args) throws IOException
+	{
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+	    bw.write("Enter a phrase : ");
+	    bw.flush();
+	    String test = br.readLine();
+	    String c1 = "Encrypt: ";
+	    String c2 = "Decrypted : ";
+
+	    try
+	    {	
+	    test = test.toLowerCase();
+	    bw.write("Origial caracter : " + test + "\n");
+		   
+	    test = test.replace ("a" , "5");
+	    test = test.replace ("e" , "7");
+	    test = test.replace ("i" , "9");
+	    test = test.replace ("o" , "1");
+	    test = test.replace ("u" , "3");
+	    
+	    char array [] = test.toCharArray();
+	    	for (int i = 0; i < array.length; i++)
+	    	{
+	    		array[i] = (char)(array[i] + (char)1);
+	    	}
+	    	
+	    	String test1 = String.valueOf(array);
+	    	bw.write(c1 + "\n");
+	    	bw.write(test1 + "\n");	    
+	    	bw.flush();
+	    
+	    	char arrayD[] = test1.toCharArray();
+	    		for (int i = 0; i < arrayD.length; i++)
+	    		{
+	    			arrayD[i] = (char)(arrayD[i] - (char)1);
+	    		}	
+	    		
+	    		String test2 = String.valueOf(arrayD);
+	    		bw.write( c2 + "\n");
+	    		bw.write(test2 + "\n");
+	    		bw.flush();
+	    		
+	    	    test2 = test2.replace ("5" , "a");
+	    	    test2 = test2.replace ("7" , "e");
+	    	    test2 = test2.replace ("9" , "i");
+	    	    test2 = test2.replace ("1" , "o");
+	    	    test2 = test2.replace ("3" , "u");
+	    		
+	    	    bw.write(test2);
+	    	    bw.flush();
+	    }
+	    catch (Exception ex) {}
+ }
+}
